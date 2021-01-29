@@ -3,7 +3,12 @@
 
 // 1. countWords
 function countWords(phrase) {
-  // Replace this with your code
+  
+  const wordCounts = {};
+
+  for (word of phrase.split(' ')) {
+    if (wordCounts.hasOwnProperty(word))
+  }
 }
 
 

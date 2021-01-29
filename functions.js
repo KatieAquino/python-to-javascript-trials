@@ -1,16 +1,42 @@
 "use strict";
 
 
-// 1. isHometown
+const isHometown = town => {
 
-// Define your function here
+    if ((town === 'San Francisco') || (town === 'san francisco')) {
+        return true;
+    }
+    return false;
+}
+
+const getFullName = (firstName, lastName) => {
+
+    return `${firstName} ${lastName}`;
+}
 
 
-// 2. getFullName
+const calculateTotal = (basePrice, state, tax = 0.05) => {
 
-// Define your function here
+    const subtotal = (basePrice * (1 + tax));
 
+    let fee = 0;
 
-// 3. calculateTotal
+    if (state === 'CA') {
+        fee = (0.03 * subtotal);
+    }
 
-// Define your function here
+    else if (state === 'PA') {
+        fee = 2;
+    }
+
+    else if (state === 'MA') {
+        if (basePrice <= 100) {
+            fee = 1;
+        }
+        else {
+            fee = 3;
+        }
+    }
+
+    return (subtotal + fee);
+}
